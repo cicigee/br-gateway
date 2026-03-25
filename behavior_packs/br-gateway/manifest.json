@@ -1,0 +1,37 @@
+{
+  "format_version": 2,
+  "header": {
+    "name": "BR Gateway",
+    "description": "Connects players to other servers",
+    "uuid": "AB2B7EEA-D809-4A54-96E6-9412D3401217",
+    "version": [1,0,0],
+    "min_engine_version": [1,20,0]
+  },
+  "modules": [
+    {
+      "type": "script",
+      "language": "javascript",
+      "uuid": "88744915-C473-4BD5-8238-9FABA47143DC",
+      "version": [1,0,0],
+      "entry": "scripts/gw.js"
+    }
+  ],
+  "dependencies": [
+    {
+      "module_name": "@minecraft/server",
+      "version": "beta"
+    },
+    {
+      "module_name": "@minecraft/server-net",
+      "version": "beta"
+    },
+    {
+      "module_name": "@minecraft/server-ui",
+      "version": "beta"
+    },
+    {
+      "module_name": "@minecraft/server-admin",
+      "version": "beta"
+    }
+  ]
+}
