@@ -15,3 +15,7 @@ Allows for connecting to various Bedrock servers without configuring every insta
 - Add server metadata file onto HTTP server
 - Create world in Bedrock client with Beta APIs enabled, import into gateway server: https://learn.microsoft.com/en-us/minecraft/creator/documents/experimentalfeaturestoggle?view=minecraft-bedrock-stable
   
+
+
+https://github.com/user-attachments/assets/51fff2d6-5f48-4f05-a013-b9ab40d3ae27
+
