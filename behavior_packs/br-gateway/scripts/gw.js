@@ -6,6 +6,7 @@ let serverData = [];
 let serverMetadataURL = 'http://172.10.10.10/serverlist.json';
 let serverHookURL = 'http://172.10.10.10/myhook';
 let serverHookToken = 'my-auth-token';
+let serverHostname = 'my.minecraft.example.com';
 
 
 http.get(serverMetadataURL).then((response) => {
@@ -16,7 +17,7 @@ http.get(serverMetadataURL).then((response) => {
 
 function performRouting(player, choice) {
     serverData.forEach((value) => {
-        if (value.name == choice) { transferPlayer(player, { hostname: 'obs.ceecee.pro', port: value.port }); }
+        if (value.name == choice) { transferPlayer(player, { hostname: serverHostname, port: value.port }); }
 
     });
 
@@ -97,7 +98,6 @@ world.beforeEvents.playerInteractWithEntity.subscribe((event) => {
 
 });
 
-//
 world.afterEvents.playerInteractWithBlock.subscribe((event) => {
     console.log("Player invoked server selector dialog:", event.player.name);
     let form = new ModalFormData();
@@ -109,7 +109,6 @@ world.afterEvents.playerInteractWithBlock.subscribe((event) => {
     form.dropdown("World", effectList);
     form.show(event.player)
         .then((r) => {
-            // This will stop the code when the player closes the form
             if (r.canceled) return;
             console.log('ServerSelector: ' + event.player.name + ' -> ' + effectList[r.formValues]);
             sendHook(event.player.name, effectList[r.formValues]);
@@ -135,7 +134,6 @@ world.afterEvents.playerSwingStart.subscribe((event) => {
     form.dropdown("World", effectList);
     form.show(event.player)
         .then((r) => {
-            // This will stop the code when the player closes the form
             if (r.canceled) return;
             console.log('ServerSelector: ' + event.player.name + ' -> ' + effectList[r.formValues]);
             sendHook(event.player.name, effectList[r.formValues]);
