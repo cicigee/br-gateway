@@ -11,5 +11,10 @@ jobs:
         - run: sudo apt -y update && sudo apt -y install eslint
         - uses: actions/checkout@v6
         - run: env
+        - run: |
+           cd $GITHUB_WORKSPACE &&
+           for jsfile in $(find . -name '*.json'); do \
+             eslint $jsfile 
+           done
 
         
