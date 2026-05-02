@@ -13,7 +13,7 @@ jobs:
         - run: env
         - run: |
            cd $GITHUB_WORKSPACE &&
-           npm install inquirer
+           sudo npm install inquirer
            eslint --init
            for jsfile in $(find . -name '*.json'); do \
              eslint $jsfile 
