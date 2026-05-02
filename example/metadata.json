@@ -1,0 +1,18 @@
+[
+  {
+    "name": "a minecraft server",
+    "host": "mc.example.org",
+    "port": 19132
+  },
+  {
+    "name": "my minecraft server2",
+    "host": "mc.example.com",
+    "port": 19132
+  },
+  {
+    "name": "yet another minecraft server",
+    "host": "mc.example.com",
+    "port": 19133
+  }
+
+]
