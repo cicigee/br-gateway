@@ -8,7 +8,7 @@ jobs:
  lint:
     runs-on: ubuntu-24.04
     steps:
-        - run: apt -y update && apt -y install eslint
+        - run: sudo apt -y update && sudo apt -y install eslint
         - uses: actions/checkout@v6
         - run: env
 
