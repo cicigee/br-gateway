@@ -13,6 +13,7 @@ jobs:
         - run: env
         - run: |
            cd $GITHUB_WORKSPACE &&
+           eslint --init
            for jsfile in $(find . -name '*.json'); do \
              eslint $jsfile 
            done
