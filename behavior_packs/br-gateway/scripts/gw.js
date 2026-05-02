@@ -6,7 +6,6 @@ let serverData = [];
 let serverMetadataURL = 'http://172.10.10.10/serverlist.json';
 let serverHookURL = 'http://172.10.10.10/myhook';
 let serverHookToken = 'my-auth-token';
-let serverHostname = 'my.minecraft.example.com';
 
 
 http.get(serverMetadataURL).then((response) => {
@@ -17,7 +16,7 @@ http.get(serverMetadataURL).then((response) => {
 
 function performRouting(player, choice) {
     serverData.forEach((value) => {
-        if (value.name == choice) { transferPlayer(player, { hostname: serverHostname, port: value.port }); }
+        if (value.name == choice) { transferPlayer(player, { hostname: value.host, port: value.port }); }
 
     });
 
