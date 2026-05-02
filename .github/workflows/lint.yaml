@@ -1,8 +1,8 @@
 on:
   push:
     branches:
-    - main
-    - release/*
+        - all
+  workflow_dispatch:
 
 jobs:
  lint:
