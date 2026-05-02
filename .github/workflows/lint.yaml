@@ -8,11 +8,12 @@ jobs:
  lint:
     runs-on: ubuntu-24.04
     steps:
-        - run: sudo apt -y update && sudo apt -y install eslint
+        - run: sudo apt -y update && sudo apt -y install eslint npm
         - uses: actions/checkout@v6
         - run: env
         - run: |
            cd $GITHUB_WORKSPACE &&
+           npm install inquirer
            eslint --init
            for jsfile in $(find . -name '*.json'); do \
              eslint $jsfile 
